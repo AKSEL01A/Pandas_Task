@@ -55,9 +55,10 @@ STUDENTS_DF = pd.DataFrame({
 def filter_rows_above_threshold(df: pd.DataFrame, column: str, threshold: float) -> pd.DataFrame:
     """Sub-taskc 1: Filter rows where the specified column is strictly greater than threshold."""
     return df[df[column]> threshold]
+
 def fill_missing_values(df: pd.DataFrame, fill_value: float) -> pd.DataFrame:
     """Sub-task 2: Replace all missing values (NaN/None) with fill_value."""
-    pass
+    return df.fillna(fill_value)
 
 def calculate_group_mean(df: pd.DataFrame, group_col: str, value_col: str) -> pd.Series:
     """Sub-task 3: Calculate the mean of value_col grouped by group_col."""
