@@ -1,4 +1,5 @@
 import pandas as pd
+from pandas.core.groupby import groupby
 
 # ==============================================================================
 # Pre-defined Datasets for the Tasks
@@ -62,7 +63,7 @@ def fill_missing_values(df: pd.DataFrame, fill_value: float) -> pd.DataFrame:
 
 def calculate_group_mean(df: pd.DataFrame, group_col: str, value_col: str) -> pd.Series:
     """Sub-task 3: Calculate the mean of value_col grouped by group_col."""
-    pass
+    return df.groupby(group_col)[value_col].mean()
 
 def merge_dataframes(left_df: pd.DataFrame, right_df: pd.DataFrame, on_column: str) -> pd.DataFrame:
     """Sub-task 4: Perform an inner merge of left_df and right_df on on_column."""
