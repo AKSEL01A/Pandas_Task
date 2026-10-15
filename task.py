@@ -67,7 +67,7 @@ def calculate_group_mean(df: pd.DataFrame, group_col: str, value_col: str) -> pd
 
 def merge_dataframes(left_df: pd.DataFrame, right_df: pd.DataFrame, on_column: str) -> pd.DataFrame:
     """Sub-task 4: Perform an inner merge of left_df and right_df on on_column."""
-    pass
+    return pd.merge(left_df, right_df, on=on_column, how="inner")
 
 def sort_and_select_top(df: pd.DataFrame, sort_by_col: str, n: int) -> pd.DataFrame:
     """Sub-task 5: Sort df in descending order by sort_by_col and return the top n rows."""
